@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="si">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A/L විභාග Countdown</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+<header>
+  <div>
+    <h1>A/L විභාග Countdown</h1>
+    <p class="lead">2025 A/L විභාගය — ආරම්භ: <strong>2025-11-10</strong> අවසන්: <strong>2025-12-05</strong></p>
+  </div>
+  <div class="small">Lakshitha සඳහා • Responsive • Local save</div>
+</header>
+<div style="height:12px"></div>
+
+<div class="grid">
+<div>
+  <!-- Next Exam Card -->
+  <div class="card">
+    <h3>ඊළඟ විභාගය</h3>
+    <div id="nextCard" class="card next-card">
+      <div id="nextSub">විෂය එකක් නොමැත</div>
+      <div style="height:8px"></div>
+      <div id="nextCountdown" class="countdown">-- days --:--:--</div>
+    </div>
+  </div>
+
+  <!-- Manage Subjects -->
+  <div style="height:12px"></div>
+  <div class="card">
+    <h3>විෂය හා දිනය පාලනය</h3>
+    <div class="small">ඒකක විෂය එකක් හා දිනය/වේලාව සෙට් කරන්න. එක් දිනකට විෂය කිහිපයක් සෙට් කල හැක.</div>
+    <div style="height:8px"></div>
+    <label>විෂය නම</label>
+    <input id="subjectName" type="text" placeholder="උදා: චිත්‍ර ඉතිහාසය" />
+    <label>විභාග දිනය (YYYY-MM-DD)</label>
+    <input id="subjectDate" type="date" value="2025-11-10" />
+    <label>විභාග වේලාව (HH:MM)</label>
+    <input id="subjectTime" type="time" value="09:00" />
+    <div style="height:8px"></div>
+    <div class="controls">
+      <button id="addBtn">එකතු / යාවත්කාලීන</button>
+      <button id="genBtn">දිනයන් සකස් කරන්න</button>
+      <button id="clearBtn">සියල්ල ඉවත් කරන්න</button>
+      <button id="exportBtn">JSON Export</button>
+      <button id="importBtn">JSON Import</button>
+    </div>
+    <div style="height:12px"></div>
+    <div class="small">
+      ආරම්භ දිනය: <input id="startDate" type="date" value="2025-11-10" />  
+      &nbsp; අවසන් දිනය: <input id="endDate" type="date" value="2025-12-05" />
+    </div>
+    <div style="height:10px"></div>
+    <div class="small">
+      සටහන: විභාගය 2025-11-10 සිට 2025-12-05 දක්වා ක්‍රියාත්මක වේ. <span id="computedDays">...</span> දින (inclusive)
+    </div>
+  </div>
+
+  <!-- All Exams List -->
+  <div style="height:12px"></div>
+  <div class="card">
+    <h3>සියලු විභාග</h3>
+    <div class="exam-list" id="examList"></div>
+  </div>
+
+  <!-- Current Usage -->
+  <div style="height:12px"></div>
+  <div class="card">
+    <h3>ප්‍රතිදානය</h3>
+    <p class="small">
+      එකතු කල විෂය සංඛ්‍යාව: <span id="subjectCount">0</span><br>
+      ප්‍රතිචාරක සංඛ්‍යාව (අනුකරණය): <span id="userCount">1</span>
+    </p>
+  </div>
+
+  <!-- Official PDF Link -->
+  <div style="height:12px"></div>
+  <div class="card">
+    <h3>නිල 2025 විභාග කාලසටහන PDF</h3>
+    <p class="small">
+      සම්පූර්ණ නිල විෂය ලැයිස්තුව සහ වේලාවන් සඳහා, 
+      <a href="https://www.doenets.lk/images/resources/NEWS/AL%20Time%20Table%202025_1755235159873.pdf" target="_blank">
+        මෙතනින් බලා / Download කරන්න
+      </a>.
+    </p>
+  </div>
+
+  <!-- AI Q&A Placeholder -->
+  <div style="height:12px"></div>
+  <div class="card">
+    <h3>AI උදව් (ඉක්මනින්)</h3>
+    <input id="aiQuestion" type="text" placeholder="ඔබේ ප්‍රශ්නය මෙහි ටයිප් කරන්න..." />
+    <button id="askBtn">Ask AI</button>
+    <div id="aiAnswer" class="small">AI උපදෙස් ඉක්මනින් ලබා දෙනු ඇත.</div>
+  </div>
+</div>
+
+<aside>
+<div class="card">
+  <h3>Quick info</h3>
+  <div class="small">Countdown මගින් විභාග දිනයට ඉතිරි කාලය පෙන්වයි. එක් දිනකට විෂය කිහිපයක් තිබිය හැක.</div>
+</div>
+
+<div class="footer">
+📞 +94 72 890 6865 | 💬 <a href="https://wa.me/94728906865" target="_blank">WhatsApp</a> | ✉️ <a href="mailto:lakshitha6292@gmail.com">Email</a> | 📘 <a href="https://www.facebook.com/share/1BZgMcuZip/" target="_blank">Facebook</a>
+</div>
+</aside>
+</div>
+
+<canvas id="confettiCanvas"></canvas>
+<script src="script.js"></script>
+</body>
+</html>
